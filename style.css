@@ -58,10 +58,13 @@ body {
     transition: 0.4s;
 }
 
-.img {
+.img,
+.vid {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+
 
 @media (max-width: 768px) {
 
@@ -100,7 +103,6 @@ body {
 }
 
 /* BackToTop */
-/*_________________flèche retour en haut____________________*/
 /*  flèche retour en haut  */
 .back-to-top {
     /*  Basic styling  */
