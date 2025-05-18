@@ -1,0 +1,246 @@
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>TeK2OuF x Abraka Amra</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="images/tek2ouf-logo.jpg" alt="Logo TeK2OuF" class="logo">
+    <nav>
+      <a href="#accueil">Accueil</a>
+      <a href="#musique">Musique</a>
+      <a href="#tek2ouf">TeK2OuF</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="accueil" class="hero">
+    <img src="images/abraka-amra-cover.jpg" alt="Abraka Amra - J’aimerais bien être comme toi" class="cover">
+    <h1>Abraka Amra</h1>
+    <h2>J’aimerais bien être comme toi</h2>
+    <a href="#musique" class="btn">Écouter maintenant</a>
+  </section>
+
+  <section id="musique">
+    <h2>Découvre le son</h2>
+    <audio controls>
+      <source src="ton-morceau.mp3" type="audio/mp3">
+      Ton navigateur ne supporte pas l'élément audio.
+    </audio>
+    <div class="streaming-links">
+      <a href="#">Spotify</a>
+      <a href="#">YouTube</a>
+      <a href="#">Deezer</a>
+    </div>
+  </section>
+
+  <section id="tek2ouf">
+    <h2>La Marque TeK2OuF</h2>
+    <img src="images/tek2ouf-logo.jpg" alt="Logo TeK2OuF" class="logo-section">
+    <p>
+      TeK2OuF, c’est la fusion de la street culture, de l’énergie underground et de la passion du son.
+      Découvre notre univers, nos visuels et nos services !
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact & Réseaux</h2>
+    <form>
+      <input type="text" placeholder="Nom" required>
+      <input type="email" placeholder="Email" required>
+      <textarea placeholder="Message" required></textarea>
+      <button type="submit">Envoyer</button>
+    </form>
+    <div class="socials">
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+      <a href="#">YouTube</a>
+    </div>
+  </section>
+
+  <footer>
+    <img src="images/tek2ouf-logo.jpg" alt="Logo TeK2OuF" class="logo-footer">
+    <p>© 2025 TeK2OuF – Abraka Amra</p>
+  </footer>
+</body>
+</html>
+
+```
+
+```css
+Css
+
+body {
+  background: #181818;
+  color: #f5f5f5;
+  font-family: 'Montserrat', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #111;
+  padding: 10px 30px;
+  border-bottom: 2px solid #ffd700;
+}
+
+.logo {
+  height: 60px;
+  border-radius: 50%;
+  background: #fff;
+  padding: 5px;
+}
+
+nav a {
+  color: #ffd700;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+}
+nav a:hover {
+  color: #fff;
+}
+
+.hero {
+  text-align: center;
+  padding: 50px 20px 30px 20px;
+  background: url('images/abraka-amra-cover.jpg') center/cover no-repeat;
+  border-bottom: 2px solid #ffd700;
+}
+
+.cover {
+  max-width: 320px;
+  width: 80vw;
+  border-radius: 16px;
+  box-shadow: 0 6px 30px #000a;
+  margin-bottom: 20px;
+}
+
+h1, h2 {
+  margin: 10px 0 0 0;
+  font-family: 'Oswald', Arial, sans-serif;
+  letter-spacing: 2px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 40px;
+  background: #ffd700;
+  color: #181818;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: background 0.2s;
+}
+.btn:hover {
+  background: #fff;
+}
+
+section {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+#musique audio {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.streaming-links {
+  margin-top: 15px;
+}
+.streaming-links a {
+  background: #222;
+  color: #ffd700;
+  padding: 8px 18px;
+  margin: 0 8px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+.streaming-links a:hover {
+  background: #ffd700;
+  color: #222;
+}
+
+#tek2ouf {
+  text-align: center;
+}
+.logo-section {
+  max-width: 140px;
+  margin: 20px auto;
+  display: block;
+  border-radius: 50%;
+  background: #fff;
+  padding: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+form input, form textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+}
+form button {
+  background: #ffd700;
+  color: #181818;
+  font-weight: bold;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+form button:hover {
+  background: #fff;
+}
+
+.socials {
+  margin-top: 20px;
+  text-align: center;
+}
+.socials a {
+  color: #ffd700;
+  margin: 0 12px;
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: color 0.2s;
+}
+.socials a:hover {
+  color: #fff;
+}
+
+footer {
+  background: #111;
+  color: #ffd700;
+  text-align: center;
+  padding: 25px 0 10px 0;
+  border-top: 2px solid #ffd700;
+}
+.logo-footer {
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+```

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuthNeon - Modern Authentication System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@preline/preline@2.0.0/dist/preline.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        neon: {
+                            blue: '#00f5ff',
+                            pink: '#ff00ff',
+                            purple: '#9d00ff',
+                            green: '#00ff9d'
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'neon-glow': 'neon-glow 1.5s ease-in-out infinite alternate'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        },
+                        'neon-glow': {
+                            'from': { 
+                                'text-shadow': '0 0 5px #fff, 0 0 10px #fff, 0 0 15px #00f5ff, 0 0 20px #00f5ff'
+                            },
+                            'to': { 
+                                'text-shadow': '0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00f5ff, 0 0 40px #00f5ff'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(90deg, #00f5ff, #ff00ff, #9d00ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .neon-border {
+            position: relative;
+        }
+        .neon-border::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 2px;
+            background: linear-gradient(45deg, #00f5ff, #ff00ff, #9d00ff);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 245, 255, 0.1), 0 10px 10px -5px rgba(255, 0, 255, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 min-h-screen font-sans antialiased">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="text-2xl font-bold gradient-text">AuthNeon</div>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-8">
+                <nav>
+                    <ul class="flex space-x-8">
+                        <li><a href="#features" class="hover:text-neon-blue transition-colors">Features</a></li>
+                        <li><a href="#database" class="hover:text-neon-pink transition-colors">Database</a></li>
+                        <li><a href="#installation" class="hover:text-neon-purple transition-colors">Installation</a></li>
+                        <li><a href="#api" class="hover:text-neon-green transition-colors">API</a></li>
+                    </ul>
+                </nav>
+                <a href="#login" class="px-6 py-2 bg-gradient-to-r from-neon-blue to-neon-purple rounded-full font-medium hover:opacity-90 transition-opacity">Login</a>
+            </div>
+            
+            <button id="mobile-menu-button" class="md:hidden text-gray-400 hover:text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 px-4 py-2">
+            <div class="flex flex-col space-y-3">
+                <a href="#features" class="px-3 py-2 hover:text-neon-blue transition-colors">Features</a>
+                <a href="#database" class="px-3 py-2 hover:text-neon-pink transition-colors">Database</a>
+                <a href="#installation" class="px-3 py-2 hover:text-neon-purple transition-colors">Installation</a>
+                <a href="#api" class="px-3 py-2 hover:text-neon-green transition-colors">API</a>
+                <a href="#login" class="px-3 py-2 text-center bg-gradient-to-r from-neon-blue to-neon-purple rounded-full font-medium mt-2">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 bg-gradient-to-b from-gray-900/80 to-gray-900 z-10"></div>
+            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-20"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 py-32 relative z-20">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                    <span class="gradient-text">Modern Authentication</span> <br>System
+                </h1>
+                <p class="text-xl text-gray-300 mb-10">
+                    Secure, scalable, and easy-to-integrate authentication solution with role-based access control, built with React, Node.js, and MySQL.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#login" class="px-8 py-4 bg-gradient-to-r from-neon-blue to-neon-purple rounded-full font-bold text-lg hover:opacity-90 transition-opacity flex items-center justify-center space-x-2">
+                        <span>Get Started</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#features" class="px-8 py-4 border border-neon-blue text-neon-blue rounded-full font-bold text-lg hover:bg-neon-blue/10 transition-colors flex items-center justify-center space-x-2">
+                        <span>Learn More</span>
+                        <i class="fas fa-book-open"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Powerful Features</h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">Everything you need for secure authentication and authorization</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-gray-800 rounded-xl p-8 border border-gray-700 card-hover transition-all duration-300">
+                    <div class="w-14 h-14 bg-neon-blue/10 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-user-shield text-2xl text-neon-blue"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Role-Based Access</h3>
+                    <p class="text-gray-400">Define user roles with granular permissions to control access to your application resources.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-gray-800 rounded-xl p-8 border border-gray-700 card-hover transition-all duration-300">
+                    <div class="w-14 h-14 bg-neon-pink/10 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-fingerprint text-2xl text-neon-pink"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Multi-Factor Auth</h3>
+                    <p class="text-gray-400">Add an extra layer of security with SMS, email, or authenticator app verification.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-gray-800 rounded-xl p-8 border border-gray-700 card-hover transition-all duration-300">
+                    <div class="w-14 h-14 bg-neon-purple/10 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-key text-2xl text-neon-purple"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">JWT Tokens</h3>
+                    <p class="text-gray-400">Stateless authentication with secure JSON Web Tokens that automatically expire.</p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="bg-gray-800 rounded-xl p-8 border border-gray-700 card-hover transition-all duration-300">
+                    <div class="w-14 h-14 bg-neon-green/10 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-database text-2xl text-neon-green"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Database Ready</h3>
+                    <p class="text-gray-400">Pre-configured with MySQL but easily adaptable to MongoDB, PostgreSQL, or others.</p>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="bg-gray-800 rounded-xl p-8 border border-gray-700 card-hover transition-all duration-300">
+                    <div class="w-14 h-14 bg-neon-blue/10 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-plug text-2xl text-neon-blue"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">RESTful API</h3>
+                    <p class="text-gray-400">Clean, well-documented API endpoints for all authentication operations.</p>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="bg-gray-800 rounded-xl p-8 border border-gray-700 card-hover transition-all duration-300">
+                    <div class="w-14 h-14 bg-neon-pink/10 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-mobile-alt text-2xl text-neon-pink"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Mobile Ready</h3>
+                    <p class="text-gray-400">Responsive design that works perfectly on both desktop and mobile devices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Database Section -->
+    <section id="database" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <h2 class="text-4xl font-bold mb-6">Database <span class="gradient-text">Structure</span></h2>
+                    <p class="text-xl text-gray-400 mb-8">Our system comes with a well-designed database schema that handles all authentication needs while remaining flexible for your custom requirements.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-neon-blue/20 flex items-center justify-center">
+                                    <i class="fas fa-table text-neon-blue"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold mb-1">Users Table</h4>
+                                <p class="text-gray-400">Stores all user information with secure password hashing and essential fields.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-neon-pink/20 flex items-center justify-center">
+                                    <i class="fas fa-tags text-neon-pink"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold mb-1">Roles Table</h4>
+                                <p class="text-gray-400">Defines different user roles and their permissions within the system.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-8 h-8 rounded-full bg-neon-purple/20 flex items-center justify-center">
+                                    <i class="fas fa-key text-neon-purple"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold mb-1">Sessions Table</h4>
+                                <p class="text-gray-400">Tracks active user sessions and tokens for enhanced security.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 relative">
+                    <div class="bg-gray-900 rounded-xl p-6 neon-border">
+                        <div class="flex items-center space-x-2 mb-4">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                        <pre class="text-sm text-gray-300 overflow-x-auto">
+<span class="text-neon-blue">CREATE TABLE</span> <span class="text-neon-pink">users</span> (
+    <span class="text-neon-green">id</span> <span class="text-neon-purple">INT</span> <span class="text-yellow-400">AUTO_INCREMENT PRIMARY KEY</span>,
+    <span class="text-neon-green">username</span> <span class="text-neon-purple">VARCHAR(50)</span> <span class="text-yellow-400">NOT NULL UNIQUE</span>,
+    <span class="text-neon-green">email</span> <span class="text-neon-purple">VARCHAR(100)</span> <span class="text-yellow-400">NOT NULL UNIQUE</span>,
+    <span class="text-neon-green">password</span> <span class="text-neon-purple">VARCHAR(255)</span> <span class="text-yellow-400">NOT NULL</span>,
+    <span class="text-neon-green">role_id</span> <span class="text-neon-purple">INT</span>,
+    <span class="text-neon-green">created_at</span> <span class="text-neon-purple">TIMESTAMP</span> <span class="text-yellow-400">DEFAULT CURRENT_TIMESTAMP</span>,
+    <span class="text-neon-green">updated_at</span> <span class="text-neon-purple">TIMESTAMP</span> <span class="text-yellow-400">DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP</span>,
+    <span class="text-neon-blue">FOREIGN KEY</span> (role_id) <span class="text-neon-blue">REFERENCES</

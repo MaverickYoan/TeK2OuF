@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'OMERTA - Tek2ouf</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        
+        .app-container {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto;
+            height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(to bottom, #2b0a06, #000);
+        }
+        
+        .background-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M30,20 L40,40 L20,35 Z" fill="rgba(0,0,0,0.3)"/></svg>');
+            opacity: 0.2;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 30px 0 15px;
+        }
+        
+        .title {
+            font-size: 42px;
+            color: #e9a23d;
+            text-shadow: 2px 2px 4px #8b0000, -1px -1px 0 #8b0000, 1px -1px 0 #8b0000, -1px 1px 0 #8b0000, 1px 1px 0 #8b0000;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-family: 'Impact', sans-serif;
+        }
+        
+        .subtitle {
+            font-size: 28px;
+            color: #e9a23d;
+            text-shadow: 1px 1px 3px #8b0000, -1px -1px 0 #8b0000, 1px -1px 0 #8b0000, -1px 1px 0 #8b0000, 1px 1px 0 #8b0000;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-family: 'Impact', sans-serif;
+        }
+        
+        .clock-container {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin: 10px auto;
+            background: #e9a23d;
+            border-radius: 50%;
+            border: 5px solid #8b0000;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+        
+        .clock-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+            color: #000;
+            line-height: 1.2;
+        }
+        
+        .chains {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="30" viewBox="0 0 100 30"><path d="M10,15 A10,10 0 1,0 30,15 A10,10 0 1,0 10,15 Z M30,15 A10,10 0 1,0 50,15 A10,10 0 1,0 30,15 Z M50,15 A10,10 0 1,0 70,15 A10,10 0 1,0 50,15 Z M70,15 A10,10 0 1,0 90,15 A10,10 0 1,0 70,15 Z" fill="none" stroke="rgba(80,80,80,0.8)" stroke-width="6"/></svg>');
+            background-repeat: repeat;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+        
+        .silhouette {
+            position: relative;
+            width: 100%;
+            height: 180px;
+            margin-top: 20px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400"><path d="M250,350 L280,200 L330,180 L350,350 Z M650,350 L630,220 L650,200 L670,220 L680,250 L700,350 Z M700,350 L720,250 L750,200 L780,350 Z M800,350 L810,280 L830,250 L850,350 Z" fill="black"/><path d="M400,100 L420,80 L450,90 L470,50 L500,80 L520,60 L550,90 L570,70 L600,100" fill="none" stroke="black" stroke-width="5"/></svg>');
+            background-repeat: no-repeat;
+            background-position: center bottom;
+        }
+        
+        .cityscape {
+            position: absolute;
+            bottom: 180px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200"><path d="M0,200 L50,150 L70,160 L100,100 L120,110 L150,80 L170,90 L200,60 L220,70 L250,40 L300,60 L320,30 L350,50 L400,20 L420,40 L450,30 L500,50 L520,20 L550,40 L600,10 L650,40 L680,20 L700,60 L750,40 L800,70 L850,40 L900,80 L950,60 L1000,100 L1000,200 Z" fill="black"/></svg>');
+            background-repeat: no-repeat;
+            opacity: 0.8;
+        }
+        
+        .music-notes {
+            position: absolute;
+            top: 20%;
+            right: 15%;
+            width: 30px;
+            height: 30px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="M10,30 L10,10 L25,5 L25,25 M10,30 C10,35 15,35 15,30 C15,25 10,25 10,30 M25,25 C25,30 30,30 30,25 C30,20 25,20 25,25" fill="none" stroke="black" stroke-width="3"/></svg>');
+            background-repeat: no-repeat;
+        }
+        
+        .music-notes:nth-child(2) {
+            top: 70%;
+            left: 15%;
+            transform: scale(0.8);
+        }
+        
+        .bottom-section {
+            position: relative;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .artist-name {
+            font-size: 36px;
+            color: #e9a23d;
+            font-family: 'Arial', sans-serif;
+            font-style: italic;
+            font-weight: bold;
+            text-align: right;
+            padding-right: 20px;
+            margin-top: 20px;
+        }
+        
+        .navigation {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px 0;
+            border-top: 1px solid #8b0000;
+        }
+        
+        .nav-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #e9a23d;
+            text-decoration: none;
+            font-size: 12px;
+        }
+        
+        .nav-button.active {
+            color: #ffffff;
+            background-color: rgba(139, 0, 0, 0.5);
+            border-radius: 8px;
+            padding: 5px 10px;
+        }
+        
+        .nav-icon {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+        
+        .main-content {
+            padding: 0 20px;
+            margin-bottom: 80px;
+            overflow-y: auto;
+            max-height: calc(100vh - 260px);
+        }
+        
+        .album-tracks {
+            margin-top: 30px;
+            list-style: none;
+        }
+        
+        .track-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 10px;
+            border-bottom: 1px solid rgba(233, 162, 61, 0.3);
+            background: rgba(0, 0, 0, 0.4);
+            margin-bottom: 8px;
+            border-radius: 5px;
+        }
+        
+        .track-number {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #8b0000;
+            color: #e9a23d;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .track-info {
+            flex: 1;
+            text-align: left;
+        }
+        
+        .track-title {
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 3px;
+        }
+        
+        .track-duration {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .track-play {
+            width: 30px;
+            height: 30px;
+            background: transparent;
+            border: none;
+            color: #e9a23d;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        
+        /* Styles pour la page À propos */
+        .about-section {
+            padding: 20px 0;
+        }
+        
+        .legal-info {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .info-title {
+            font-size: 20px;
+            color: #e9a23d;
+            margin-bottom: 5px;
+        }
+        
+        .info-subtitle {
+            font-size: 14px;
+            color: #e9a23d;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .info-text {
+            margin-bottom: 20px;
+        }
+        
+        .info-text p {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        
+        .info-details {
+            margin-bottom: 20px;
+        }
+        
+        .info-row {
+            display: flex;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid rgba(233, 162, 61, 0.3);
+        }
+        
+        .info-label {
+            min-width: 140px;
+            font-weight: bold;
+            color: #e9a23d;
+        }
+        
+        .info-value {
+            flex: 1;
+        }
+        
+        .products-section {
+            margin-top: 25px;
+        }
+        
+        .products-section h3 {
+            font-size: 18px;
+            color: #e9a23d;
+            margin-bottom: 15px;
+        }
+        
+        .product-category {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        
+        .category-number {
+            margin-right: 10px;
+            font-weight: bold;
+            color: #e9a23d;
+        }
+        
+        .category-desc {
+            flex: 1;
+            line-height: 1.4;
+        }
+    </style>,40 L600,10 L650,40 L680,20 L700,60 L750,40 L800,70 L850,40 L900,80 L950,60 L1000,100 L1000,200 Z" fill="black"/></svg>');
+            background-repeat: no-repeat;
+            opacity: 0.8;
+        }
+        
+        .music-notes {
+            position: absolute;
+            top: 20%;
+            right: 15%;
+            width: 30px;
+            height: 30px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="M10,30 L10,10 L25,5 L25,25 M10,30 C10,35 15,35 15,30 C15,25 10,25 10,30 M25,25 C25,30 30,30 30,25 C30,20 25,20 25,25" fill="none" stroke="black" stroke-width="3"/></svg>');
+            background-repeat: no-repeat;
+        }
+        
+        .music-notes:nth-child(2) {
+            top: 70%;
+            left: 15%;
+            transform: scale(0.8);
+        }
+        
+        .bottom-section {
+            position: relative;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .artist-name {
+            font-size: 36px;
+            color: #e9a23d;
+            font-family: 'Arial', sans-serif;
+            font-style: italic;
+            font-weight: bold;
+            text-align: right;
+            padding-right: 20px;
+            margin-top: 20px;
+        }
+        
+        .navigation {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px 0;
+            border-top: 1px solid #8b0000;
+        }
+        
+        .nav-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #e9a23d;
+            text-decoration: none;
+            font-size: 12px;
+        }
+        
+        .nav-icon {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+        
+        .main-content {
+            padding: 0 20px;
+            margin-bottom: 80px;
+        }
+        
+        .album-tracks {
+            margin-top: 30px;
+            list-style: none;
+        }
+        
+        .track-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 10px;
+            border-bottom: 1px solid rgba(233, 162, 61, 0.3);
+            background: rgba(0, 0, 0, 0.4);
+            margin-bottom: 8px;
+            border-radius: 5px;
+        }
+        
+        .track-number {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #8b0000;
+            color: #e9a23d;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .track-info {
+            flex: 1;
+            text-align: left;
+        }
+        
+        .track-title {
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 3px;
+        }
+        
+        .track-duration {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .track-play {
+            width: 30px;
+            height: 30px;
+            background: transparent;
+            border: none;
+            color: #e9a23d;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <div class="background-overlay"></div>
+        <div class="chains"></div>
+        
+        <div class="header">
+            <h1 class="title">L'OMERTA</h1>
+        </div>
+        
+        <div class="clock-container">
+            <div class="clock-text">20 ANS<br>D'ATTENTE</div>
+        </div>
+        
+        <div class="cityscape"></div>
+        <div class="music-notes"></div>
+        <div class="music-notes"></div>
+        
+        <div class="main-content">
+            <h2 class="subtitle">LE RESPECT<br>AVANT TOUT</h2>
+            
+            <div class="silhouette"></div>
+            
+            <div class="album-tracks">
+                <div class="track-item">
+                    <div class="track-number">1</div>
+                    <div class="track-info">
+                        <div class="track-title">Intro - L'Omerta</div>
+                        <div class="track-duration">2:15</div>
+                    </div>
+                    <button class="track-play">▶</button>
+                </div>
+                <div class="track-item">
+                    <div class="track-number">2</div>
+                    <div class="track-info">
+                        <div class="track-title">Le Respect Avant Tout</div>
+                        <div class="track-duration">3:45</div>
+                    </div>
+                    <button class="track-play">▶</button>
+                </div>
+                <div class="track-item">
+                    <div class="track-number">3</div>
+                    <div class="track-info">
+                        <div class="track-title">20 Ans D'Attente</div>
+                        <div class="track-duration">4:20</div>
+                    </div>
+                    <button class="track-play">▶</button>
+                </div>
+                <div class="track-item">
+                    <div class="track-number">4</div>
+                    <div class="track-info">
+                        <div class="track-title">La Loi du Silence</div>
+                        <div class="track-duration">3:58</div>
+                    </div>
+                    <button class="track-play">▶</button>
+                </div>
+                <div class="track-item">
+                    <div class="track-number">5</div>
+                    <div class="track-info">
+                        <div class="track-title">Chaînes Brisées</div>
+                        <div class="track-duration">3:33</div>
+                    </div>
+                    <button class="track-play">▶</button>
+                </div>
+            </div>
+            
+            <div class="artist-name">Tek2ouf</div>
+        </div>
+        
+        <div class="navigation">
+            <a href="#" class="nav-button" id="home-btn">
+                <div class="nav-icon">🏠</div>
+                <span>Accueil</span>
+            </a>
+            <a href="#" class="nav-button" id="tracks-btn">
+                <div class="nav-icon">🎵</div>
+                <span>Titres</span>
+            </a>
+            <a href="#" class="nav-button" id="albums-btn">
+                <div class="nav-icon">💿</div>
+                <span>Albums</span>
+            </a>
+            <a href="#" class="nav-button" id="about-btn">
+                <div class="nav-icon">ℹ️</div>
+                <span>À propos</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Animation pour les notes de musique
+            const musicNotes = document.querySelectorAll('.music-notes');
+            
+            musicNotes.forEach(note => {
+                let posY = parseInt(note.style.top) || Math.random() * 50 + 10;
+                let posX = parseInt(note.style.left) || Math.random() * 70 + 10;
+                let speed = Math.random() * 1 + 0.5;
+                
+                function animate() {
+                    posY -= speed;
+                    if (posY < -30) {
+                        posY = 100;
+                        posX = Math.random() * 70 + 10;
+                    }
+                    note.style.top = posY + '%';
+                    note.style.left = posX + '%';
+                    requestAnimationFrame(animate);
+                }
+                
+                animate();
+            });
+            
+            // Gestion des clics sur les boutons de lecture
+            const playButtons = document.querySelectorAll('.track-play');
+            let currentlyPlaying = null;
+            
+            playButtons.forEach((button, index) => {
+                button.addEventListener('click', () => {
+                    if (currentlyPlaying === index) {
+                        button.textContent = '▶';
+                        currentlyPlaying = null;
+                    } else {
+                        playButtons.forEach(btn => btn.textContent = '▶');
+                        button.textContent = '⏸';
+                        currentlyPlaying = index;
+                    }
+                });
+            });
+            
+            // Navigation
+            const homeBtn = document.getElementById('home-btn');
+            const tracksBtn = document.getElementById('tracks-btn');
+            const albumsBtn = document.getElementById('albums-btn');
+            const aboutBtn = document.getElementById('about-btn');
+            
+            const mainContent = document.querySelector('.main-content');
+            const homeContent = mainContent.innerHTML;
+            
+            const aboutContent = `
+                <div class="about-section">
+                    <h2 class="subtitle">À PROPOS</h2>
+                    
+                    <div class="legal-info">
+                        <h3 class="info-title">TeK2OuF : Marque déposée</h3>
+                        <p class="info-subtitle">Marque de fabrique, de commerce ou de service 2021-2026 (2031)</p>
+                        
+                        <div class="info-text">
+                            <p>J'ai créé ma marque TeK2OuF avec laquelle il est possible de confectionner tout ce qu'il y a ci-dessous.</p>
+                            
+                            <p>Je suis à la recherche d'un/une artiste qui souhaiterait commercialiser ses créations mais qui ne peut pas sans sa marque déposée.</p>
+                            
+                            <p>Je mets à disposition ma marque de fabrique de commerce et de service afin d'un échange de bon procédé.</p>
+                        </div>
+                        
+                        <div class="info-details">
+                            <div class="info-row">
+                                <div class="info-label">Contact :</div>
+                                <div class="info-value">000tek2ouf000@gmail.com</div>
+                            </div>
+                            
+                            <div class="info-row">
+                                <div class="info-label">Département :</div>
+                                <div class="info-value">58</div>
+                            </div>
+                            
+                            <div class="info-row">
+                                <div class="info-label">Image de la marque :</div>
+                                <div class="info-value">Marque française</div>
+                            </div>
+                            
+                            <div class="info-row">
+                                <div class="info-label">Marque :</div>
+                                <div class="info-value">TeK2OuF</div>
+                            </div>
+                            
+                            <div class="info-row">
+                                <div class="info-label">Type de la marque :</div>
+                                <div class="info-value">Marque verbale</div>
+                            </div>
+                            
+                            <div class="info-row">
+                                <div class="info-label">Déposant :</div>
+                                <div class="info-value">Monsieur yoan de menezes</div>
+                            </div>
+                            
+                            <div class="info-row">
+                                <div class="info-label">Statut :</div>
+                                <div class="info-value">Marque enregistrée</div>
+                            </div>
+                            
+                            <div class="info-row">
+                                <div class="info-label">Date de dépôt / Enregistrement :</div>
+                                <div class="info-value">28/06/2021</div>
+                            </div>
+                            
+                            <div class="info-row">
+                                <div class="info-label">Lieu de dépôt :</div>
+                                <div class="info-value">92 INPI - Dépôt électronique</div>
+                            </div>
+                            
+                            <div class="info-row">
+                                <div class="info-label">Date prévue pour l'expiration :</div>
+                                <div class="info-value">28/06/2031</div>
+                            </div>
+                            
+                            <div class="info-row">
+                                <div class="info-label">Langue :</div>
+                                <div class="info-value">Français (Langue de dépôt)</div>
+                            </div>
+                            
+                            <div class="info-row">
+                                <div class="info-label">Classification de Nice :</div>
+                                <div class="info-value">16 ; 25</div>
+                            </div>
+                        </div>
+                        
+                        <div class="products-section">
+                            <h3>Produits et services réalisables :</h3>
+                            
+                            <div class="product-category">
+                                <div class="category-number">16 :</div>
+                                <div class="category-desc">Produits de l'imprimerie: caractères d'imprimerie; papier; carton; boîtes en papier ou en carton; affiches; albums; cartes; livres; journaux; prospectus; brochures; calendriers; objets d'art gravés; objets d'art lithographiés; tableaux (peintures) encadrés ou non; patrons pour la couture; dessins; mouchoirs de poche en papier; photographies; sacs (enveloppes, pochettes) en papier ou en matières plastiques pour l'emballage; sacs à ordures en papier ou en matières plastiques; articles de papeterie; adhésifs (matières collantes) pour la papeterie ou le ménage; matériel pour artistes; pinceaux; articles de bureau (à l'exception des meubles).</div>
+                            </div>
+                            
+                            <div class="product-category">
+                                <div class="category-number">25 :</div>
+                                <div class="category-desc">Vêtements; cravates; bonneterie; chaussettes; chaussons; chaussures de plage; chaussures de ski; chaussures de sport; sous-vêtements; articles chaussants; chapellerie; chemises; ceintures (habillement); gants (habillement); foulards.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            homeBtn.addEventListener('click', () => {
+                mainContent.innerHTML = homeContent;
+                setActiveButton(homeBtn);
+            });
+            
+            aboutBtn.addEventListener('click', () => {
+                mainContent.innerHTML = aboutContent;
+                setActiveButton(aboutBtn);
+            });
+            
+            function setActiveButton(activeBtn) {
+                [homeBtn, tracksBtn, albumsBtn, aboutBtn].forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                activeBtn.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

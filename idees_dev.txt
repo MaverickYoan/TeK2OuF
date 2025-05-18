@@ -1,0 +1,1216 @@
+créer un site internet avec ces infos s'il te plait : 
+
+L'OMERTA
+
+LE SYSTEME
+VS
+L'AUTHENTICICITE
+20
+ANS
+D'ATTENTE
+
+LE RESPECT
+AVANT TOUT
+
+Tek20uF
+
+120
+ANS
+D'ATTENTE
+
+Tek20UF
+
+____________________
+
+HTML
+
+CSS
+
+Result
+
+body{
+font-family: Verdana, sans-
+serif;
+font-size: xx-large;
+
+}
+
+/*La taille de la police de #p1 et
+de #p2 dépend
+*de celle fixée dans l'élément
+parent (ici body)*/
+#p1{font-size: smaller;}
+#p2{font-size: larger;}
+
+/*La taille de #p3, #p4, ... #p9
+dépend des réglages
+*du navigateur et pas d'un autre
+élément de la page*/
+#p3{font-size: xx-small;}
+#p4{font-size: x-small;}
+#p5{font-size: small;}
+#p6{font-size: medium;}
+#p7{font-size: large;}
+#p8{font-size: x-large;}
+#p9{font-size: xx-large;}
+
+_______________________
+
+<body>
+<h1>Un titre de niveau 1</h1>
+
+<p id="p2">Un paragraphe p2</p>
+<p id="p3">Un paragraphe p3</p>
+<p id="p4">Un paragraphe p4</p>
+<p id="p5">Un paragraphe p5</p>
+<p id="p6">Un paragraphe p6</p>
+<p id="p7">Un paragraphe p7</p>
+<p id="p8">Un paragraphe p8</p>
+<p id="p9">Un paragraphe p9</p>
+</body>
+
+HTML
+
+CSS
+
+Result
+
+<p id="p1">Un paragraphe p1</p>
+
+__________________________
+
+the only good
+system is a
+
+SUPPORT
+
+OPEN TO ALL:
+
+soundsystem
+
+PIRATES.> SOUND SYSTEM
+
+YOUR
+
+BIEN
+
+Liberst - Neatralt - Pertuge
+
+ARTISTS.> PERFORMERZ
+
+Culture Tekno 90's
+
+PARTI PIRATE
+
+FREE SPIRIT ) FREE CULTURE
+
+RAVER
+
+LOCAL
+
+CESTLE
+
+La culture, c'est la mémoire du peuple, la
+
+DEBUT DU
+
+Garde le
+
+BONHEUR!
+
+conscience collective de la continuité historique,
+
+Smile
+
+le mode de penser et de vivre.
+
+SU FACEBOOK C
+
+C
+
+(Milan Kundera)
+
+SOUND
+
+Ne pas
+
+SAUVEZ UNE FLEUR
+
+SYSTEM
+
+I SUPPORT
+
+MANGEZ UN HiPPIE
+
+ramasser ses
+UNDERGROUND
+
+CULTURE
+
+ordures, tue
+l'image de
+
+MUSIC!
+
+FREE PARTY
+IS NOT A CRIME
+ECONVIVIALITEF
+
+PROPRETE
+RESPECT
+AUTOGESTION
+
+la teuf
+
+MUSIOUE
+
+FREE PANTY, RAVE RETE UBRE
+
+RENCONTRES
+
+tekobuel
+
+35
+
+Lorsqu'un certain nombre d'individus,
+atteint un niveau de conscience, cellui-ci
+peut etre transmis d'un esprit a l'autre
+
+RESPECT / TOLERANCE
+AUTO-GESTION /.
+
+evolution
+
+a toute la communaute
+
+RIEN
+
+SAVE THE
+
+GOOD
+
+NAMASTE
+
+RENCONTRE
+
+"Nous
+devrions otre
+
+N ARRETE
+
+SOUND VIBES
+
+soutenus
+plutôt que
+
+UN PEUPLE
+
+T20 - maverick - TeK2OuF
+
+réprimés,"
+
+QUI DANSE
+
+SYSTEM
+
+Musique
+commence la ou s'arrete
+
+Munissez-vous des textes de lois pour constater les abus
+
+RESPECT MUSIOUE
+
+le pouvoir
+
+Nous sommes devenus plus qu'un collectif Nous avons cree une grande famille 
+
+CHAUD LA TEKNO
+
+Protegez les Sound system des saisies
+
+TEKRO SOUNE SYSTIM 23
+
+"des mots.
+
+
+FREE
+
+Diffusez largement vos temoignages par video, photos ou texte ALn
+
+PRRTH
+
+Repondez presents aux actions anti-repression
+
+Face aux pouvoirs publics, restez aimables mais fermes.
+
+Organisez-vous, defendez vos droits et ne lachez rien.
+
+LA TEKNO EST UN ART DE VIVRE
+
+Rien n'est facile, mais tout est possible!
+
+____________________________
+
+Yo De Menezes
+
+MOSOUNDSTM
+
+Porte parole au niveao ministériel
+
+SAVE
+
+corétal
+
+dalloa-intracomn
+
+pour les soundstms Rhone-Alpins
+
+Expert P - adeain ra/srv/syst.
+
+httes://woww.mindo.d.com/vo_t2ospundsfm
+
+69-01-38-47-26-07-73-7
+
+SMUN
+
+bttps//ertg.dalkia-infracom.fs/?
+xoan.de-menezes (dekin.fi
+
+bitpx://eww.youtube.com./yaer/yoY:001/vdces
+
+0426726635 Cité Internationale
+
+http :: //www.yovtube.com/yser/MrMaverkk0079/vidces
+
+http://sound-system-unity.forumectif.org
+
+OUND
+
+http://freeform.fr
+
+SUPPORT
+
+pour te gree pokl et non conte le Bouvernewent
+
+SYST
+
+YOUR
+
+TeK2OuF cest I'nom quy achoisi y a d'ça 15ans lorsque j'enregistrai mes tracks faites à l'époque sur playstation1 (music, music 2000, musk maker, ejay
+
+LOCAL
+
+puis i'me suis mis à Tordi avec Fruity Loops 3 et depuis toujours sur FL studio. Depuis I'début j'faisais des tracks + ou moins hardcore/hardfloor/tribecore.
+Fin 2014 me suis mis en mode live de FL et c'est devenu un vrai bonheur d'me rapprocher du son qu'j'aime et qui'ai toujours essayé d'faire, tribe old school
+Ifeis du sonnon pas pour deveni célèbre ras oour isuer en free libre et ocur ove ma zx stit eravée sur les silions d'un rile pour qu'elle vive, traverse les gérérations en contribuant a l'histcire ce la free ibre
+
+LA TEKNO EST UN ART DE VIVRE
+
+NO INTOLINE MRMP
+
+TECHNO
+
+KEEP SMILING
+
+AIDeS
+
+PREVENTION ET REDUCTION DES RISQUES
+
+tes associations qui interviennent dans les evénements testits
+
+EN MILIEU FESTIF
+
+reclvclet vos detritus
+aremacs
+
+the only good
+system is a
+
+SUPPORT
+
+OPEN TO ALLA
+
+souhdsystem
+
+PIRATES.> SOUND SYSTEM
+
+Liberte - Neutralite - Partage
+
+ARTISTS.> PERFORMERZ
+
+Culture Tekno 90's
+
+YOUR
+
+BIEN
+RAVER
+
+PARTI PIRATE
+
+FREE SPIRIT ) FREE CULTURE
+
+LOCAL
+
+CESTLE
+
+La culture, c'est la mémoire du peuple, la
+
+DEBUT DU
+
+Garde le
+
+BONHEUR!
+
+conscience collective de la continuité historique,
+
+Smile
+
+le mode de penser et de vivre.
+
+NO INF@ Z.A.T .: Zone d'Autononie Tenporaire
+SU FACEBOOK
+
+(Milan Kundera)
+
+SOUND
+
+AMUSANT
+
+Ne pas
+
+SAUVEZ UNE FLEUR
+
+AMUSARI
+
+MANGEZ UN HiPPiE
+
+LA TEKNO
+
+SYSTEM
+
+I SUPPORT
+
+ramasser ses
+
+NOISS3Hd3
+
+SIGNE CE MANIFEST
+
+CULTURE
+
+ordures, tue
+UNDERGROUND
+
+TECHNO P
+
+RITE LIBERTE-ECHANGE
+
+l'image de
+
+MUSIC!
+
+WTEUE PASSION JOIE
+
+SRENCONTRES
+
+ARL PASSION
+
+PROPRETE
+
+CONVIVIALITE RESPONS ABL
+
+FREE PARTY
+IS NOT A CRIME
+
+REE PEOP
+
+AUTOGESTION
+FEE RESPECTE
+
+FREE PARTY, RAVE, FETE LIBRE ... UNDERGROUN
+
+la teuf
+
+MUSIOUE
+
+tekoouf
+
+Lorsqu'un certain nombre d'individus,
+atteint un niveau de conscience, cellui-ci
+peut être transmis d'un esprit à l'autre
+
+RESPECT / TOLERANCE / ovolution
+
+à toute la communauté !
+
+AUTO-GESTION /
+
+NAMAST
+
+RIEN
+
+SAVE THE
+
+GOOD .
+
+RENCONTRE
+
+"Nous
+devrions être
+
+N ARRETE
+
+plutôt que
+
+UN PEUPLE
+
+SOUND
+
+VIBES
+
+soutenus
+
+T20 - maverick - TeK2OuF
+
+réprimés."
+
+QUI DANSE
+
+SYSTEM
+
+AND
+
+LaMusique
+
+RAVEOLUTION
+
+commence là où s'arrete
+
+RAVELUTION
+
+CHAUD LA TEKNO
+
+Nous sommes
+
+Munissez-vous des textes de lois pour constater les abus
+
+RESPECT
+
+MUSIQUIE le pouvoir
+
+des mots.
+
+devenus plus
+
+Protégez les Sound system des saisies
+
+TEKNO SOUND SYST
+
+qu' un
+
+Diffusez largement vos temoignages par video, photos ou texte SPIRALTRIBE
+
+ARTH
+
+collectif
+
+Répondez présents aux actions anti-répression
+
+Nous avons cree
+
+Face aux pouvoirs publics, restez aimables mais fermes.
+
+une grande famille
+
+Organisez-vous, défendez vos droits et ne lâchez rien.
+
+Vitalité Pair
+Guerisom Delivrance Sante Protection Stabilite
+
+Rien n'est facile, mais tout est possible!
+
+LA TEKNO EST UN ART DE VIVRE
+
+________________________
+
+VIVE LA RESISTANCE
+
+___________________
+
+PAR
+
+RTY
+
+FREE
+
+I S
+
+CRIME
+
+NOT I
+
+_____________
+
+BLACK
+LIVES
+MATTER
+
+____________
+
+1600 10101001 0101001001001
+
+010100
+81010019010100100 10 10 10 10130
+
+000100100 10 10 10 10
+
+0200100100101001 0101001001001
+
+0:010 10 10 1011 8 1
+
+10010 10010010 0 10001000100 0103 3 %
+
+10009110010100100100101001001010
+
+1101 00101001 010100100100101
+
+1000/001001001010010010100
+0100101010010 10 10 101 1 2 2
+
+TID EO/C01 D10100100100101 >
+
+1 0000 10 10 01010 10 10 10
+
+220701001 01010011
+
+2220/20100101001
+
+010111001
+
+_________________
+
+Follow the white rabbit.
+
+____________________
+
+Les Sound systems ont fait entendre
+leur voix et leur musique
+www.leprogres.f
+
+Reves a ipet Optimisme
+
+Meerizh Nesb lo s Tribe Do bu conp de metete
+torohor con de metetes
+
+réative-
+PuissanceM
+
+uno respon sabifi
+noralle
+
+Pensee Contianc
+
+de desobeir
+
+Positive
+
+TEKALOGUE
+
+T2OSOUND6TM IO0%LIVE
+POUR QUE VIVE LA FREE
+
+Martin Luther, Kine
+
+S'UNiR POAIR
+
+1 respect the nature
+2 respect yoursel
+3 respect the others
+
+Viël
+
+NE PLIS SLBİR
+
+1985
+
+4 ir u don't want to leave your dog
+at home take care of him
+S smart partdng
+
+MOSOUND6TM
+
+6 be careeul about
+
+movinc
+
+6 be carerul about rave party's
+keep them 4 u and your
+Friends oni
+
+oN musIc
+
+7 U are responsable or your and
+HAAD WUHK BEA
+TALENT WHEN
+DOESN'T WARKAAL HIFEOLA TEKNO EST UN ART DE VIVRE
+conte le scwverneuent
+
+Danser, c'est comme
+
+OLD SCHOOL
+
+EBRATE
+
+parler en silence .
+
+HUMAN
+RIGHTS
+
+C'est dire pleins de
+
+RE
+
+wwwlhepxagerg
+
+choses sans dire mot.
+
+CHANGE
+
+HESISTOHTS
+
+100% UNDERGROUND
+
+YOU WANT
+TO SEE IN
+THE WORLD
+
+_____________________
+
+15 unotes o ma trte Tel?0uf
+Amolour pesatetoe de crdoiton mustcol & d'enregtsirement lite
+
+MÊME
+
+de souitens las colfures clferocites codergreand stoce 1999 amcteurs et sue
+cctrf depats 2001 en Free Pertg
+
+PAS
+
+No dibcitan, just felno E irtbe coMory
+Marertck esb To p Tribe0o by goon de mebetes
+
+PEUR
+
+tekooun
+
+30 gears old
+
+ane responsabilite
+morale
+de désobéir
+
+S
+
+T2OSOUNDOTM IO0%%LIVE HuarE
+
+Egal
+
+bux lois iniustes
+
+POUR QUE VIVE LA FREE
+
+Frøter
+
+COLUCHECANDIDAT
+
+Martin Luther Kine
+
+1985
+
+tokoou
+
+tekobue
+
+I20NOUNDAIM
+
+AL FHS OLA TEKNO EST UN ART DE VIVRE
+
+pour. to pee porle tibe et non conHse le gouvernewent
+
+HI EXPONTATIOHS DARMEMENT
+
+____________________
+
+CYBERNETICS
+
+SUSPENDED
+ANIMATION
+
+ARTIFICIAL INTELLIGENCE
+
+_________________
+
+ma passion
+west pas à vendre
+
+AMUSANT
+SOUNDSYSTEM
+
+PARTAGE
+
+LIBRE
+TEUF
+
+ENTRAIDE
+BONNEHUMEUR
+
+RESPONSABLE
+
+MOUVEMENT ENORME
+
+SSON
+
+RENCONTRES
+
+-
+
+AMBIANCE
+
+FOULE
+
+EMENT
+
+MAGIQUE UNTE
+
+TECHNO
+PROPRE
+
+JOYEUX PASSION'JOIE
+
+PROPRETE
+
+CONVIVIALITEE
+
+LIBERTE
+
+AUTOGESTION
+
+SOLIDARITE
+
+ECHANGE
+
+ERESPECT
+
+MUSIQUE
+
+POTES
+
+CONFLANCE
+
+tekoloue
+tekooue
+
+______________
+
+TeK2OuF
+
+TZOSOUNDETM by MAVERICK YO
+
+________________
+
+..
+
+______________
+
+RESISTANCE
+
+RESISTANCE
+
+1940
+
+FRAN
+
+1945
+C
+
+SE
+
+________________
+
+日公2共存
+
+Omale pea Cepast
+
+Paganism
+
+joy
+
+share
+
+Christ
+
+喜悅 愛
+
+共存
+
+sameksistere
+
+present
+
+hope
+
+Wiccan
+
+Hindu
+
+Connicinnism
+AOnIL和平
+Alreligionty
+
+coexist
+
+past
+
+coeister
+
+Live Together
+
+music Llife
+retognine T
+
+coezistir
+
+and acrept
+
+mathematics
+
+Vre in prace
+
+art
+
+love
+
+sh anethes
+
+AdRČEOyAt
+
+Islam
+
+female
+
+nature
+
+technology
+
+Pagan
+Judaism futures
+
+女性
+
+OUYUROPSTE
+
+koexistieren Christianh
+Buddhism
+
+________________________________
+
+Pentacle
+
+Ankh
+
+Kabbalah
+
+Shinto Native/Animism Triskele
+
+Star of David Eye of Horus
+
+Baha'l
+
+Chaos
+
+Buddhism
+
+0hm
+
+Islam
+
+Sikhism
+
+Taoism
+
+Jainism Asatru/Heathen Zoroastrianism
+
+Atheism
+
+Confucian
+
+Correllian
+
+Unitarian Indigenous
+
+Satanic
+
+Greenman Hecates Circle Triquetra
+
+Balefire
+
+Health
+
+Blessing
+
+Sunrise
+
+Sunset
+
+Love
+
+Friendship
+Marriage
+
+Magic
+
+Healing
+
+Circle
+
+Peace
+
+Triple
+
+Money
+
+Weight
+
+Child
+
+Goddess
+
+God
+
+Deosil Widdershins
+
+Rebirth
+
+Loss
+
+Protection
+
+Witch
+
+Psychic
+
+Traveling
+
+Bane/
+
+Fertility
+
+Maiden
+
+Mother
+
+Crone
+
+Stormn
+
+Sign
+
+Awareness
+
+Deadly
+
+X
+
+T
+
+Earth
+
+Air
+
+Fire
+
+Water
+
+Purification
+Essential
+
+Athame
+
+Sword
+
+Oil
+
+Altar
+
+Cord
+
+Chalice
+
+Cakes
+
+Spell
+
+Spirituality
+
+Salt
+
+Moonrise
+
+and Ale
+
+Moonset
+
+Wine
+
+Aries
+
+Taurus
+
+Gemini
+
+Cancer
+
+Leo
+
+Virgo
+
+Libra
+
+Scorpio
+
+Sagittarius
+
+Capricor
+
+Aquarius
+
+Pisces
+
+Sun
+
+Mercwy
+
+Venus/
+
+Earth
+
+Moon
+Mars/Man
+
+21
+
+Woman
+
+m
+
+Jupiter
+
+Saturn
+
+Uranus
+
+Nephuie
+
+Pluto
+
+Winter
+
+Spring
+
+Summer
+
+Autumn
+
+
+_______________
+
+SAVE THE
+SOUND
+SYSTEM
+
+_______________
+
+Tek20uF
+
+________________
+
+Vue synoptique de l'emploi-type
+Activites types
+
+Competences professionnelles
+
+Fiche
+
+Fiche
+
+AT
+
+CP
+
+1
+
+Installer et configurer son environnement de travail en
+fonction du projet web ou web mobile
+
+Développer la partie front-end d'une application web ou
+
+2
+
+Maquetter des interfaces utilisateur web ou web mobile
+
+1
+
+web mobile securisee
+
+3
+
+Realiser des interfaces utilisateur statiques web ou web
+mobile
+
+4
+
+Developper la partie dynamique des interfaces
+utilisateur web ou web mobile
+
+5
+
+Mettre en place une base de donnees relationnelle
+Developper des composants d'acces aux donnees SQL
+
+Developper la partie back-end d'une application web
+
+6
+
+et NoSQL
+
+2
+
+ou web mobile securisée
+
+7
+
+Developper des composants metier cote serveur
+Documenter le deploiement d'une application
+
+8
+
+dynamique web ou web mobile
+
+_________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
