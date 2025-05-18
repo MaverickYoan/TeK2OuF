@@ -62,9 +62,14 @@ body {
 .vid {
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-
+.container {
+    border: 1px solid green;
+}
 
 @media (max-width: 768px) {
 
