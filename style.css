@@ -71,8 +71,91 @@ body {
     border: 1px solid green;
 }
 
+.scroll {
+    animation: linear both reveal;
+    animation-timeline: view();
+    animation-range: contain 30% contain 50%;
+    view-timeline-inset: 0%
+}
+
+@keyframes reveal {
+    from {
+        transform: scale(0);
+        opacity: 0
+    }
+
+    to {
+        transform: scale (1);
+        opacity: 1
+    }
+}
+
+
+.shop-img {
+    grid-row: auto;
+    width: 20%;
+}
+
+h2,
+p,
+span,
+div,
+.img,
+iframe {
+    animation: linear slide;
+    animation-timeline: view();
+    animation-range: cover 0 cover 30%
+}
+
+@keyframes slide {
+    from {
+        transform: translateY(100%);
+        opacity: 0
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1
+    }
+}
+
+.imgYo {
+    height: 200px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.imgLogo1 {
+    opacity: 1;
+}
+
+.imgLbtk {
+    width: 100%;
+    height: 300px;
+    display: none;
+    justify-items: center;
+    opacity: 0;
+
+}
 
 @media (max-width: 768px) {
+    .imgLogo1 {
+        opacity: 0;
+        display: none;
+    }
+
+    .imgLogo {
+        width: 100%;
+    }
+
+    .imgLbtk {
+        width: 100%;
+        height: 300px;
+        display: inline-block;
+        justify-items: center;
+        opacity: 1;
+    }
 
     .nav-links {
         display: none;
