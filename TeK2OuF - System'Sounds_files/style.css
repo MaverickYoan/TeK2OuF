@@ -25,6 +25,7 @@ body {
     align-items: center;
     background-color: #000000;
     padding: 0px 20px;
+    z-index: 1;
 }
 
 .nav-links {
